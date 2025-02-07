@@ -53,8 +53,8 @@ function validarCpf(cpf) {
     
   }
 async function realizarLogin() {
-    const loginUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/autenticacao";
-    //const loginUrl = "https://api.jae.com.br/autenticacao"; // Caso queira testar sem proxy
+   // const loginUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/autenticacao";
+    const loginUrl = "https://api.jae.com.br/autenticacao"; // Caso queira testar sem proxy
 
     const credenciais = {
         usuario: "08655788000186",
@@ -261,7 +261,8 @@ async function realizarLogin() {
     console.log("Enviando requisição...");
   
     try {
-      const consultaUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/vt-gateway/cadastro/consulta";
+      //const consultaUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/vt-gateway/cadastro/consulta";
+        const consultaUrl = "https://api.jae.com.br/vt-gateway/cadastro/consulta"
       console.log("URL de consulta:", consultaUrl);
   
       // Gera o JWT assinado
