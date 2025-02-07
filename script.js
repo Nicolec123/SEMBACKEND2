@@ -51,51 +51,63 @@ function validarCpf(cpf) {
   
   
     
-  }async function realizarLogin() {
-   const loginUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/autenticacao";
-   //const loginUrl = "https://api.jae.com.br/autenticacao";
+  }
+async function realizarLogin() {
+    const loginUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/autenticacao";
+    //const loginUrl = "https://api.jae.com.br/autenticacao"; // Caso queira testar sem proxy
+
     const credenciais = {
         usuario: "08655788000186",
         senha: "#Trocar123",
     };
-  
+
+    console.log("🚀 Iniciando login...");
+    console.log("🔗 URL da requisição:", loginUrl);
+    console.log("📩 Corpo da requisição:", credenciais);
+
     // Validação de CNPJ antes de prosseguir
     if (!validarCnpj(credenciais.usuario)) {
-        console.error("CNPJ inválido!");
+        console.error("❌ CNPJ inválido!");
         alert("CNPJ inválido. Verifique os dados, retire(.,/, -) e tente novamente.");
         return;
     }
-  
+
     try {
-      const response = await fetch(loginUrl, {
-        method: "POST",
-        mode: "cors",  // Garante que o navegador aceite CORS
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",  // Permite qualquer origem para essa requisição
-  
-        },
-        body: JSON.stringify(credenciais),
-      });
+        const response = await fetch(loginUrl, {
+            method: "POST",
+            mode: "cors",  // Garante que o navegador aceite CORS
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*", 
+            },
+            body: JSON.stringify(credenciais),
+        });
+
+        console.log("📡 Resposta recebida:");
+        console.log("📌 Status HTTP:", response.status);
+        console.log("📌 Headers:", [...response.headers]);
+
         if (!response.ok) {
-            console.error(`Erro na autenticação. Status: ${response.status}`);
+            console.error(`⚠️ Erro na autenticação. Status: ${response.status}`);
             throw new Error(`Erro ao autenticar: ${response.statusText}`);
         }
-  
+
         const data = await response.json();
+        console.log("📨 Resposta JSON recebida:", data);
+
         if (data.token) {
-            console.log("Token obtido com sucesso:", data.token);
+            console.log("✅ Token obtido com sucesso:", data.token);
             return data.token;
         } else {
+            console.warn("⚠️ Token não encontrado na resposta.");
             throw new Error("Token não encontrado na resposta.");
         }
     } catch (error) {
-        console.error("Erro ao autenticar:", error.message);
+        console.error("🚨 Erro ao autenticar:", error);
         alert(`Erro ao autenticar: ${error.message}`);
         throw error;
     }
-  }
-  
+}
   
   // Chave privada em formato PEM
   const privateKeyPem = `
