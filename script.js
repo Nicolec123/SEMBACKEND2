@@ -52,7 +52,7 @@ function validarCnpj(cnpj) {
 
   
 }async function realizarLogin() {
-  const loginUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/autenticacao";
+  const loginUrl = "https://api.jae.com.br/autenticacao";
   const credenciais = {
       usuario: "08655788000186",
       senha: "#Trocar123",
