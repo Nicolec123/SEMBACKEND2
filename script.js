@@ -264,7 +264,9 @@ async function realizarLogin() {
   
     try {
       //const consultaUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/vt-gateway/cadastro/consulta";
-        const consultaUrl = "https://api.jae.com.br/vt-gateway/cadastro/consulta"
+       // const consultaUrl = "https://api.jae.com.br/vt-gateway/cadastro/consulta"
+       const consultaUrl = "https://jolly-mouse-d3fb.danieleoffice24.workers.dev/";
+
       console.log("URL de consulta:", consultaUrl);
   
       // Gera o JWT assinado
