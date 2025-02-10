@@ -52,47 +52,61 @@ function validarCpf(cpf) {
   
     
   }
-// Função de login para autenticação e obter o token
 async function realizarLogin() {
-  const loginUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/autenticacao";
-  const credenciais = {
-      usuario: "08655788000186",
-      senha: "#Trocar123",
-  };
+    const loginUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/autenticacao";
+    const credenciais = {
+        usuario: "08655788000186",
+        senha: "#Trocar123",
+    };
 
-  // Validação de CNPJ antes de prosseguir
-  if (!validarCnpj(credenciais.usuario)) {
-      console.error("CNPJ inválido!");
-      alert("CNPJ inválido. Verifique os dados e tente novamente.");
-      return;
-  }
+    console.log("Iniciando login...");
+    console.log("URL da requisição:", loginUrl);
+    console.log("Corpo da requisição:", credenciais);
 
-  try {
-      const response = await fetch(loginUrl, {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json",
-          },
-          body: JSON.stringify(credenciais),
-      });
+    if (!validarCnpj(credenciais.usuario)) {
+        console.error("CNPJ inválido!");
+        alert("CNPJ inválido. Verifique os dados e tente novamente.");
+        return;
+    }
 
-      if (!response.ok) {
-          console.error(`Erro na autenticação. Status: ${response.status}`);
-          throw new Error(`Erro ao autenticar: ${response.statusText}`);
-      }
+    try {
+        const response = await fetch(loginUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(credenciais),
+        });
 
-      const data = await response.json();
-      if (data.token) {
-          console.log("Token obtido com sucesso:", data.token);
-          return data.token;
-      } else {
-          throw new Error("Token não encontrado na resposta.");
-      }
-  } catch (error) {
-      console.error("Erro ao autenticar:", error.message);
-      alert(`Erro ao autenticar: ${error.message}`);
-      throw error;
-  }
+        console.log("Resposta recebida:", response);
+        console.log("Status HTTP:", response.status);
+
+        if (!response.ok) {
+            console.error(`Erro na autenticação. Status: ${response.status}`);
+            const errorData = await response.json(); // Tenta obter detalhes do erro do servidor
+            console.error("Detalhes do erro:", errorData); // Exibe os detalhes do erro
+            throw new Error(`Erro ao autenticar: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        console.log("Dados recebidos:", data);
+
+        // Verifica se o token está presente em 'data.access_token' ou 'data.token'
+        const token = data.access_token || data.token;
+
+        if (token) {
+            console.log("Token obtido com sucesso:", token);
+            return token;
+        } else {
+            console.error("Token não encontrado na resposta. Dados recebidos:", data);
+            throw new Error("Token não encontrado na resposta.");
+        }
+    } catch (error) {
+        console.error("Erro ao autenticar:", error);
+        alert(`Erro ao autenticar: ${error.message}`);
+        throw error;
+    }
 }
 
   
