@@ -80,7 +80,7 @@ async function realizarLogin() {
             mode: "cors",  // Garante que o navegador aceite CORS
             headers: {
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*", 
+               // "Access-Control-Allow-Origin": "*", 
             },
             body: JSON.stringify(credenciais),
         });
@@ -281,7 +281,7 @@ async function realizarLogin() {
         method: "POST",
         mode: "cors",  // Garantir que o navegador tente aceitar CORS
         headers: {
-          "Access-Control-Allow-Origin": "*",  // Permite qualquer origem para essa requisição
+         // "Access-Control-Allow-Origin": "*",  // Permite qualquer origem para essa requisição
           "Content-Type": "text/plain", // Tipo de conteúdo (importante para a API externa)
           Authorization: authToken, // Inclui o token de autenticação
         },
