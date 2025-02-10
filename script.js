@@ -54,8 +54,8 @@ function validarCpf(cpf) {
   }
 async function realizarLogin() {
    // const loginUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/autenticacao";
-   // const loginUrl = "https://api.jae.com.br/autenticacao"; // Caso queira testar sem proxy
-   const loginUrl = "https://daniele.danieleoffice24.workers.dev/"; //proxy customizada
+   const loginUrl = "https://api.jae.com.br/autenticacao"; // Caso queira testar sem proxy
+  // const loginUrl = "https://daniele.danieleoffice24.workers.dev/"; //proxy customizada
 
 
     const credenciais = {
@@ -264,8 +264,8 @@ async function realizarLogin() {
   
     try {
       //const consultaUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/vt-gateway/cadastro/consulta";
-       // const consultaUrl = "https://api.jae.com.br/vt-gateway/cadastro/consulta"
-       const consultaUrl = "https://jolly-mouse-d3fb.danieleoffice24.workers.dev/";
+       const consultaUrl = "https://api.jae.com.br/vt-gateway/cadastro/consulta"
+       //const consultaUrl = "https://jolly-mouse-d3fb.danieleoffice24.workers.dev/";
 
       console.log("URL de consulta:", consultaUrl);
   
