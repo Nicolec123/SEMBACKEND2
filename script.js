@@ -93,7 +93,7 @@ async function realizarLogin() {
         console.log("Dados recebidos:", data);
 
         // Verifica se o token está presente em 'data.access_token' ou 'data.token'
-        const token = data.access_token || data.token;
+        const token = data.token;
 
         if (token) {
             console.log("Token obtido com sucesso:", token);
