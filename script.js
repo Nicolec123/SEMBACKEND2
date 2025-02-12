@@ -326,7 +326,7 @@ async function realizarLogin() {
   // Captura de dados dos inputs HTML e chamada de funções
   // Definição da variável global para armazenar os resultados e o índice da página atual
   let currentPage = 1;
-  const resultsPerPage = 2;
+  const resultsPerPage = 3;
   let cpfsData = []; // Array para armazenar os dados da consulta
   
   // Esconde o campo de busca por CPF ao carregar a página
