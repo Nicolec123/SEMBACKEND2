@@ -31,7 +31,7 @@
     max-width: 600px;
     min-width: 27vh;
     min-height: 40vh;
-    padding: 20px;
+    padding: 14px;
    /* background-color: #FFFFFF;*/
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -100,7 +100,8 @@
     color: #555;
     padding: 17px;
     width: 500px;
-    min-height: 28vh;
+    min-height: 29vh;
+    margin-top: 32px !important;
     background-color: #F9F9F9;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -250,3 +251,4 @@
   
 
 }}
+
