@@ -209,22 +209,9 @@
   }
 
 /*Telas maiores*/
-@media (min-width: 1200px) {
-    .consulta-container {
-      flex-direction: column; /* Empilha os elementos verticalmente */
-      align-items: center;
-    
-    }
+@media (min-width: 1300px) {
     .form-cnpj, .result-pesquisa {
-        width: 100%;
-        max-width: 600px;
-        min-width: 27vh;
         min-height: 50vh;
-        padding: 14px;
-       /* background-color: #FFFFFF;*/
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
       }
   }
 
