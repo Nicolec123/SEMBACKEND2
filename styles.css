@@ -50,7 +50,7 @@
     display: block;
     color: #555;
   }
-  .form-cnpj,.buscar-results input[type="text"] {
+  .form-cnpj input[type="text"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 17px;
