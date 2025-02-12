@@ -363,8 +363,7 @@ async function realizarLogin() {
           document.getElementById('cpf').value = "";
           document.getElementById('searchCpf').value = "";
           
-         // Adiciona margem ao formulário após a pesquisa
-       // document.querySelector('.form-cnpj').style.marginBottom = "18%";
+        
       } catch (error) {
           console.error(error);
           resultDiv.innerHTML = `<p style="color: red;">Erro ao consultar CPFs: ${error.message}</p>`;
