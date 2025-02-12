@@ -63,8 +63,9 @@
 
 #buscar-results {
   width: 100%;
-  padding-left:4%;
-  padding-right:3%;
+  padding-left: 4%;
+  padding-right: 3%;
+  margin-top: 2%;
 }
   .form-cnpj input[type="text"]:focus {
     border-color: #FF5E00;
