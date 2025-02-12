@@ -393,8 +393,8 @@ async function realizarLogin() {
   
     // Renderiza os resultados da página atual
     let htmlContent = `
-        <p style="color: green;">Consulta realizada com sucesso!</p>
-        <ul id="cpf-list">
+ <p style="color: green; text-align: center;">Consulta realizada com sucesso!</p> 
+ <ul id="cpf-list">
     `;
   
     currentResults.forEach(cpfData => {
