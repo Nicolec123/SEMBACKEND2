@@ -263,10 +263,7 @@ async function realizarLogin() {
     console.log("Enviando requisição...");
   
     try {
-      const consultaUrl = "https://cors-anywhere.herokuapp.com/https://api.jae.com.br/vt-gateway/cadastro/consulta";
-       //const consultaUrl = "https://api.jae.com.br/vt-gateway/cadastro/consulta"
-       //const consultaUrl = "https://jolly-mouse-d3fb.danieleoffice24.workers.dev/";
-
+       const consultaUrl = "https://api.jae.com.br/vt-gateway/cadastro/consulta"
       console.log("URL de consulta:", consultaUrl);
   
       // Gera o JWT assinado
@@ -279,9 +276,7 @@ async function realizarLogin() {
       // Envia a requisição diretamente para a API externa
       const response = await fetch(consultaUrl, {
         method: "POST",
-        mode: "cors",  // Garantir que o navegador tente aceitar CORS
         headers: {
-         // "Access-Control-Allow-Origin": "*",  // Permite qualquer origem para essa requisição
           "Content-Type": "text/plain", // Tipo de conteúdo (importante para a API externa)
           Authorization: authToken, // Inclui o token de autenticação
         },
