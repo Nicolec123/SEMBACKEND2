@@ -61,6 +61,19 @@
     outline: none;
     transition: border-color 0.3s;
   }
+
+#buscar-results input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 17px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+    transition: border-color 0.3s;
+  
+}
   .form-cnpj input[type="text"]:focus {
     border-color: #FF5E00;
   }
@@ -229,7 +242,7 @@
     width:300px ;
   }
   #buscar-results{
-      margin-top: 10px
+      margin-top: 13px
   }
 
   @media (max-width: 418px) {
@@ -259,9 +272,8 @@
      margin-left:-4%;
      max-width: 260px;   
     }     
-  .result-pesquisa #result{
-      max-width:400px
-  }
+.result-pesquisa #result{
+    width:200px ;
 
 }}
 
