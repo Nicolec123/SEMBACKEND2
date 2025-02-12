@@ -202,7 +202,7 @@
   }
   .result-pesquisa {
     flex: 1;
-    min-height: 50vh;
+    /*min-height: 50vh;*/
   }
   .form-cnpj {
     flex: 1;
