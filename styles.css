@@ -62,7 +62,7 @@
     transition: border-color 0.3s;
   }
 
-#buscar-results input[type="text"]{
+#buscar-results {
   width: 100%;
   padding-left:4%
   padding-right:3%  
@@ -123,7 +123,7 @@
     margin-left: 20px;
   }
   #pagination {
-    margin-top: 11px;
+    margin-top: 8px;
     text-align: center;
   }
   
@@ -201,14 +201,6 @@
   .form-cnpj {
     flex: 1;
   }
-
-/*Telas maiores
-@media (min-width: 1400px) {
-    .form-cnpj, .result-pesquisa {
-        min-height: 50vh;
-      }
-  }
-*/
 
   /* Responsividade */  
   @media (max-width: 1200px) {
