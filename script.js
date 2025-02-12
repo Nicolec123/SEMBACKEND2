@@ -379,9 +379,7 @@ async function realizarLogin() {
     const endIndex = startIndex + resultsPerPage;
     const currentResults = cpfsData.slice(startIndex, endIndex); // Pega apenas os itens da página atual
       
-     // Adiciona margem ao formulário após a pesquisa
-        document.querySelector('.form-cnpj').style.marginBottom = "20%";
-  
+     
     if (currentResults.length === 0) {
         resultDiv.innerHTML = "<p>Nenhum CPF encontrado.</p>";
         return;
