@@ -209,7 +209,7 @@
   }
 
 /*Telas maiores*/
-@media (min-width: 1300px) {
+@media (min-width: 1400px) {
     .form-cnpj, .result-pesquisa {
         min-height: 50vh;
       }
