@@ -12,6 +12,7 @@
     min-height: 100vh;
     padding: 20px;
     color: #333;
+    background-color: #edecf1
   }
   header h1 {
     font-size: 28px;
@@ -49,7 +50,7 @@
     display: block;
     color: #555;
   }
-  .form-cnpj input[type="text"] {
+  .form-cnpj,.buscar-results input[type="text"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 17px;
@@ -187,6 +188,7 @@
   }
   .result-pesquisa {
     flex: 1;
+    min-height: 50vh;
   }
   .form-cnpj {
     flex: 1;
@@ -226,6 +228,9 @@
   .result-pesquisa #result{
     width:300px ;
   }
+  .buscar-results{
+      margin-top: 10px
+  }
 
   @media (max-width: 418px) {
     .form-cnpj,.result-pesquisa {
@@ -247,7 +252,16 @@
   .result-pesquisa #result p {
     margin-bottom: 20px !important;
 }
-  
+
+   @media (max-width: 333px) {
+    .consulta-container{
+     padding:0;
+     margin-left:-4%;
+     max-width: 260px;   
+    }     
+  .result-pesquisa #result{
+      max-width:400px
+  }
 
 }}
 
