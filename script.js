@@ -495,7 +495,6 @@ async function realizarLogin() {
                       <p><strong>Erro:</strong> ${cpfData.erro?.join(", ") || "Nenhum"}</p>
                       <p><strong>Status:</strong> ${cpfData.status}</p>
                       <p><strong>Status Mídia:</strong> ${cpfData.statusMidia}</p>
-                      <p><strong>Erros:</strong> ${cpfData.erros?.join(", ") || "Nenhum"}</p>
                   </li>
               `).join("")}
           </ul>
