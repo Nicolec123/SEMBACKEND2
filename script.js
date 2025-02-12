@@ -1,6 +1,4 @@
 
-
-
 //Função para validar CPF
 function validarCpf(cpf) {
     cpf = cpf.replace(/[^\d]/g, ""); // Remove caracteres não numéricos
