@@ -406,7 +406,7 @@ async function consultarCpfs(cnpj, cpfs, authToken) {
             <li>
                 <p><strong>CPF:</strong> ${cpfData.cpf}</p>
                 <p><strong>Erro:</strong> ${cpfData.erro?.join(", ") || "Nenhum"}</p>
-                <p><strong>Rastreio Midia:</strong> ${cpfData.rastreioMidia ? cpfData.rastreioMidia : "Nenhum dado"}</p>
+                <p><strong>Rastreio Midia:</strong> ${cpfData.rastreioMidia}</p>
                 <p><strong>Status:</strong> ${cpfData.status}</p>
                 <p><strong>Status Mídia:</strong> ${cpfData.statusMidia}</p>
             </li>
@@ -499,7 +499,7 @@ async function consultarCpfs(cnpj, cpfs, authToken) {
                       <p><strong>CPF:</strong> ${cpfData.cpf}</p>
                       <p><strong>Erro:</strong> ${cpfData.erro?.join(", ") || "Nenhum"}</p>
                       <p><strong>Status:</strong> ${cpfData.status}</p>
-                      <p><strong>Rastreio Midia:</strong> ${cpfData.rastreioMidia ? cpfData.rastreioMidia : "Nenhum dado"}</p>
+                      <p><strong>Rastreio Midia:</strong> ${cpfData.rastreioMidia}</p>
                       <p><strong>Status Mídia:</strong> ${cpfData.statusMidia}</p>
                   </li>
               `).join("")}
