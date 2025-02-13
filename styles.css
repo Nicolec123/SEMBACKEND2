@@ -164,7 +164,6 @@
 .result-pesquisa {
   flex: 1;
   min-width: 600px;
-  min-height: 50vh; /* Altura mínima consistente */
   background-color: #FFFFFF;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -197,7 +196,6 @@
   }
   .result-pesquisa {
     flex: 1;
-    min-height: 50vh;
   }
   .form-cnpj {
     flex: 1;
