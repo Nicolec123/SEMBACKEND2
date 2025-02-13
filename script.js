@@ -215,42 +215,40 @@ async function realizarLogin() {
       }
         // Função para consultar CPFs vinculados ao CNPJ
 async function consultarCpfs(cnpj, cpfs, authToken) {
-      
-    // Validação de CNPJ antes de prosseguir
-    if (!validarCnpj(cnpj)) {
-      console.error("CNPJ inválido!");
-      alert("CNPJ inválido. Verifique os dados e tente novamente.");
-      return;
-    }
-  
-    // Remover caracteres especiais do CNPJ antes de enviar
-    cnpj = cnpj.replace(/[^\d]/g, "");
-  
-    // Validação de cada CPF antes de prosseguir
-    if (Array.isArray(cpfs)) {
-      for (let i = 0; i < cpfs.length; i++) {
-        // Remove caracteres especiais de cada CPF
-        cpfs[i] = cpfs[i].replace(/[^\d]/g, "");
-        if (!validarCpf(cpfs[i])) {
-          console.error(`CPF inválido: ${cpfs[i]}`);
-          alert(`CPF inválido: ${cpfs[i]}. Verifique e tente novamente.`);
-          return;
-        }
-      }
-    } else {
-      // Remover caracteres especiais e validar o único CPF
-      cpfs = cpfs.replace(/[^\d]/g, "");
-      if (!validarCpf(cpfs)) {
-        console.error(`CPF inválido: ${cpfs}`);
-        alert(`CPF inválido: ${cpfs}. Verifique e tente novamente.`);
+  // Limpar mensagens de erro anteriores
+  document.getElementById("cnpjErro").textContent = "";
+  document.getElementById("cpfErro").textContent = "";
+
+  // Validação de CNPJ antes de prosseguir
+  if (!validarCnpj(cnpj)) {
+    console.error("CNPJ inválido!");
+    document.getElementById("cnpjErro").textContent = "CNPJ inválido. Verifique os dados e tente novamente.";
+    return;
+  }
+
+  // Remover caracteres especiais do CNPJ antes de enviar
+  cnpj = cnpj.replace(/[^\d]/g, "");
+
+  // Validação de cada CPF antes de prosseguir
+  if (Array.isArray(cpfs)) {
+    for (let i = 0; i < cpfs.length; i++) {
+      // Remove caracteres especiais de cada CPF
+      cpfs[i] = cpfs[i].replace(/[^\d]/g, "");
+      if (!validarCpf(cpfs[i])) {
+        console.error(`CPF inválido: ${cpfs[i]}`);
+        document.getElementById("cpfErro").textContent = `CPF inválido: ${cpfs[i]}. Verifique e tente novamente.`;
         return;
       }
     }
-  
-
-  // se os dados forem válidos
-  console.log("CNPJ e CPFs válidos. Prosseguindo...");
-}
+  } else {
+    // Remover caracteres especiais e validar o único CPF
+    cpfs = cpfs.replace(/[^\d]/g, "");
+    if (!validarCpf(cpfs)) {
+      console.error(`CPF inválido: ${cpfs}`);
+      document.getElementById("cpfErro").textContent = `CPF inválido: ${cpfs}. Verifique e tente novamente.`;
+      return;
+    }
+  }
 
   
     // Criação do corpo da requisição com um único campo 'cpfs' 
