@@ -220,6 +220,8 @@ async function realizarLogin() {
         { cpf: "98765432109", erro: [], status: 1, rastreioMidia: "R002", statusMidia: "0" },
         { cpf: "11111111111", erro: ["CPF não encontrado"], status: 3, rastreioMidia: "R003", statusMidia: "1" },
         { cpf: "22222222222", erro: [1], status: 2, rastreioMidia: "R004", statusMidia: "0" },
+        { cpf: "22222222222", erro: ["8"], status: 2, rastreioMidia: "R004", statusMidia: "0" },
+
     ];
     // Validação de CNPJ antes de prosseguir
     if (!validarCnpj(cnpj)) {
