@@ -22,8 +22,12 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
   }
-
-
+  .erro {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 5px;
+  }
 
   /* Form  */
   .form-cnpj {
